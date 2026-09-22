@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Burhan - Portfolio</title>
+    <title>{{ name }} - Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,9 +15,10 @@
   <body>
     <header class="site-header">
       <div class="container">
-        <a href="/" class="brand">Burhan</a>
+        <a href="{% url 'main:show_main' %}" class="brand">{{ name }}</a>
         <nav>
-          <a href="/">Profile</a>
+          <a href="{% url 'main:show_main' %}">Profile</a>
+          <a href="{% url 'main:show_experience' %}">Experience</a>
         </nav>
       </div>
     </header>
@@ -26,30 +27,28 @@
         <div class="container hero-grid">
           <div class="hero-identity">
             <p class="hero-kicker">Computer Science · Universitas Indonesia</p>
-            <h1>Burhan</h1>
+            <h1>{{ name }}</h1>
           </div>
           <div class="hero-photo">
             <div class="photo-block"></div>
             <img
               class="avatar"
               src="/static/img/burhan.png"
-              alt="Photo of Burhan"
+              alt="Photo of {{ name }}"
             />
           </div>
           <div class="hero-details">
             <p class="bio">
-              CS student at Universitas Indonesia for longer than planned, now a
-              familiar (and slightly dreaded) face among Fasilkom students as a
-              teaching assistant across several courses.
+              {{ bio }}
             </p>
             <dl class="meta-list">
               <div class="meta-row">
                 <dt>NPM</dt>
-                <dd>2206000000</dd>
+                <dd>{{ npm }}</dd>
               </div>
               <div class="meta-row">
                 <dt>Program</dt>
-                <dd>S1 Ilmu Komputer</dd>
+                <dd>{{ study_program }}</dd>
               </div>
             </dl>
             <ul class="skills">
@@ -62,71 +61,15 @@
             <div class="social-links">
               <a href="https://github.com/" class="social-link">GitHub</a>
               <a href="https://linkedin.com/" class="social-link">LinkedIn</a>
-              <a href="mailto:burhan@example.com" class="social-link">Email</a>
+              <a href="mailto:salman@example.com" class="social-link">Email</a>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="experience" class="container">
-        <h2>Experience</h2>
-        <div class="experience-grid">
-          <article class="experience-card">
-            <p class="experience-title">
-              Teaching Assistant - Dasar-dasar Pemrograman 1 (DDP1)
-            </p>
-            <p class="experience-tags">
-              Fakultas Ilmu Komputer &middot; Universitas Indonesia
-            </p>
-            <p class="experience-desc">
-              Assisted first-semester students with fundamental programming
-              concepts in C, including control flow, basic data structures, and
-              debugging.
-            </p>
-          </article>
-          <article class="experience-card">
-            <p class="experience-title">
-              Teaching Assistant - Dasar-dasar Pemrograman 2 (DDP2)
-            </p>
-            <p class="experience-tags">
-              Fakultas Ilmu Komputer &middot; Universitas Indonesia
-            </p>
-            <p class="experience-desc">
-              Guided students through object-oriented programming and recursion,
-              and held additional office hours ahead of exams.
-            </p>
-          </article>
-          <article class="experience-card">
-            <p class="experience-title">
-              Teaching Assistant - Algorithms and Data Structures
-            </p>
-            <p class="experience-tags">
-              Fakultas Ilmu Komputer &middot; Universitas Indonesia
-            </p>
-            <p class="experience-desc">
-              Graded assignments and explained algorithmic complexity analysis,
-              including Big-O notation, to help students write clearer and more
-              efficient code.
-            </p>
-          </article>
-          <article class="experience-card">
-            <p class="experience-title">
-              Teaching Assistant - Platform-Based Programming (PBP)
-            </p>
-            <p class="experience-tags">
-              Fakultas Ilmu Komputer &middot; Universitas Indonesia
-            </p>
-            <p class="experience-desc">
-              Supported students building full-stack web and mobile projects
-              with Django and Flutter, from initial setup through deployment.
-            </p>
-          </article>
         </div>
       </section>
     </main>
     <footer class="site-footer">
       <div class="container">
-        <p>© 2026 Burhan. Fakultas Ilmu Komputer, Universitas Indonesia.</p>
+        <p>© 2026 {{ name }}. Fakultas Ilmu Komputer, Universitas Indonesia.</p>
       </div>
     </footer>
   </body>
