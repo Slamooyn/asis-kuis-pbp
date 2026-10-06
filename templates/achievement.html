@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+    <section>
+       <div>
+        {% for achievement in achievement_list %}
+            <p>{{ achievement.title }}</p>
+            <p>{{ achievement.description }}</p>
+            <p>{{ achievement.level }}</p>
+            <p>{{ achievement.achieved_at }}</p>
+        {% empty %}
+            <p>Belum ada pencapaian yang ditambahkan.</p>
+        {% endfor %}
+       </div>
+       <button href=""></button>
+    </section>
+</main>
+{% endblock %}

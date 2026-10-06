@@ -30,3 +30,18 @@ class Experience(models.Model):
     @property
     def is_ongoing(self):
         return self.ended_at is None
+
+class Achievement(models.Model) :
+    LEVEL_CHOISES = [ ('campus','Campus'), ('national','National'),('international','International')
+    ]
+    
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    level = models.CharField(max_length=255,choices=LEVEL_CHOISES,default = 'campus')
+    achieved_at = models.DateField()
+
+    def __str__(self) :
+        return self.title
+
+    def is_top_tier(self) :
+        return self.level in ['international','national']
